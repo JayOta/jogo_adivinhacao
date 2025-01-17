@@ -10,7 +10,7 @@ public class Jogo {
     private String palavra_aleatoria;
     private String palavraCorreta;
     private int tamanhoPalavraCorreta;
-    private StringBuilder palavraOculta;
+    private StringBuilder palavraOculta; // A classe StringBuilder do Java é usada para criar e manipular strings dinamicamente, ou seja, para modificar variáveis de string
 
     public Jogo(String lista_palavras0, String lista_palavras1, String lista_palavras2, String lista_palavras3, String lista_palavras4, String lista_palavras5, String lista_palavras6, String lista_palavras7, String lista_palavras8, String lista_palavras9) {
         setLista_palavras(lista_palavras0, lista_palavras1, lista_palavras2, lista_palavras3, lista_palavras4, lista_palavras5, lista_palavras6, lista_palavras7, lista_palavras8, lista_palavras9);
