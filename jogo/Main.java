@@ -16,8 +16,7 @@ public class Main {
             }
         }
         if(perguntaInicial.equals("sim")){
-            Jogo jogo = new Jogo();
-            jogo.setLista_palavras("lasanha", "taco", "churrasco", "omelete", "salada", "bife", "feijoada", "panqueca", "quiche", "risoto"); 
+            Jogo jogo = new Jogo("lasanha", "taco", "churrasco", "omelete", "salada", "bife", "feijoada", "panqueca", "quiche", "risoto");
             jogo.setNum_aleatorio(jogo.getTamanhoLista());
             jogo.setPalavra_aleatoria(jogo.getLista_palavras());
             int tentativas = 0;

@@ -12,7 +12,9 @@ public class Jogo {
     private int tamanhoPalavraCorreta;
     private StringBuilder palavraOculta;
 
-
+    public Jogo(String lista_palavras0, String lista_palavras1, String lista_palavras2, String lista_palavras3, String lista_palavras4, String lista_palavras5, String lista_palavras6, String lista_palavras7, String lista_palavras8, String lista_palavras9) {
+        setLista_palavras(lista_palavras0, lista_palavras1, lista_palavras2, lista_palavras3, lista_palavras4, lista_palavras5, lista_palavras6, lista_palavras7, lista_palavras8, lista_palavras9);
+    }
 
     public void setLista_palavras(String lista_palavras0, String lista_palavras1, String lista_palavras2, String lista_palavras3, String lista_palavras4, String lista_palavras5, String lista_palavras6, String lista_palavras7, String lista_palavras8, String lista_palavras9) {
         this.lista_palavras = new String[] {lista_palavras0, lista_palavras1, lista_palavras2, lista_palavras3, lista_palavras4, lista_palavras5, lista_palavras6, lista_palavras7, lista_palavras8, lista_palavras9};
