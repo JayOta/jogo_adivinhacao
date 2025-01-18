@@ -1,6 +1,6 @@
 package jogo;
 
-public abstract class Lista_jogo { // Feita para compartilhar os atributos e métodos para as subclasses
+public abstract class Lista_jogo { // Classe Feita para compartilhar os atributos e métodos para as subclasses
     private String[] lista; // Criamos uma lista de String
     private String nome; // Criamos uma nome para esta lista
 

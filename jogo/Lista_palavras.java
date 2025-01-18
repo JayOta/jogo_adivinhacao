@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Lista_palavras<T extends Lista_jogo>{ // Lista responsável por guardas tipos diferentes de Listas
+public class Lista_palavras<T extends Lista_jogo>{ // Classe responsável por guardas tipos diferentes de Listas
     private List<T> listas;
     private int tamanhoLista;
     private Random random = new Random();
@@ -29,7 +29,7 @@ public class Lista_palavras<T extends Lista_jogo>{ // Lista responsável por gua
     }
 
 
-    public void addLista(T lista) { // Adiciona uma lista diferentes à lista principal das listas
+    public void addLista(T lista) { // Adiciona uma lista diferente à lista principal das listas
         listas.add(lista);
     }
     public void mostrarListas() { // Não utilizei na Main - Mostra as listas presentes na lista principal em forma de coluna
@@ -38,7 +38,7 @@ public class Lista_palavras<T extends Lista_jogo>{ // Lista responsável por gua
         }
     }
 
-    public void setNum_aleatorio() { // Criamos um número aleatório com base no tamanho da lista aleatória
+    public void setNum_aleatorio() { // Criamos um número aleatório com base no tamanho da lista principal
         this.tamanhoLista = listas.size();
         if (tamanhoLista > 0) {
         this.num_aleatorio = random.nextInt(tamanhoLista);
