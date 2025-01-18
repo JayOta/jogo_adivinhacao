@@ -12,12 +12,14 @@ public class Jogo {
     private int tamanhoPalavraCorreta;
     private StringBuilder palavraOculta; // A classe StringBuilder do Java é usada para criar e manipular strings dinamicamente, ou seja, para modificar variáveis de string
 
-    public Jogo(String lista_palavras0, String lista_palavras1, String lista_palavras2, String lista_palavras3, String lista_palavras4, String lista_palavras5, String lista_palavras6, String lista_palavras7, String lista_palavras8, String lista_palavras9) {
-        setLista_palavras(lista_palavras0, lista_palavras1, lista_palavras2, lista_palavras3, lista_palavras4, lista_palavras5, lista_palavras6, lista_palavras7, lista_palavras8, lista_palavras9);
+    public Jogo(String[] lista_palavras) {
+        setLista_palavras(lista_palavras);
+        setNum_aleatorio();
+        setPalavra_aleatoria();
     }
 
-    public void setLista_palavras(String lista_palavras0, String lista_palavras1, String lista_palavras2, String lista_palavras3, String lista_palavras4, String lista_palavras5, String lista_palavras6, String lista_palavras7, String lista_palavras8, String lista_palavras9) {
-        this.lista_palavras = new String[] {lista_palavras0, lista_palavras1, lista_palavras2, lista_palavras3, lista_palavras4, lista_palavras5, lista_palavras6, lista_palavras7, lista_palavras8, lista_palavras9};
+    public void setLista_palavras(String[] lista_palavras) {
+        this.lista_palavras = lista_palavras;
         setTamanhoLista(this.lista_palavras);
     }
     public String[] getLista_palavras() {
@@ -25,9 +27,9 @@ public class Jogo {
     }
 
 
-    public void setNum_aleatorio(int tamanhoLista) {
+    public void setNum_aleatorio() {
         if (this.tamanhoLista > 0) {
-        this.num_aleatorio = random.nextInt(tamanhoLista);
+        this.num_aleatorio = random.nextInt(this.tamanhoLista);
     } else {
         throw new IllegalArgumentException("A lista de palavras deve conter pelo menos um elemento.");
     }
@@ -45,8 +47,8 @@ public class Jogo {
     }
 
 
-    public void setPalavra_aleatoria(String[] lista) { // <- aqui
-        this.palavra_aleatoria = lista[getNum_aleatorio()];
+    public void setPalavra_aleatoria() {
+        this.palavra_aleatoria = lista_palavras[getNum_aleatorio()];
         setPalavraCorreta(this.palavra_aleatoria);
     }
     public String getPalavra_aleatoria() {
