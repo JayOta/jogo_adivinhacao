@@ -1,4 +1,4 @@
-# Adivinhe comidas diferentes!
+# Adivinhe coisas diferentes!
 
 <h2>Objetivo:</h2>
 Fiz este jogo para treinar a lógica de programação, POO e a linguagem java
