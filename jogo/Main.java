@@ -25,8 +25,10 @@ public class Main {
             int tentativas = 0; // Controla o número de tentativas que o jogador faz
             int tentativaMaxima = 10; // Controla e diz o número máximo de tentativas que o jogador pode fazer
             boolean palavraAcertada = false; // Verifica se o jogador ganhou ou acertou a palavra do jogo
+            int tentativasRestantes = 10; // Diz para o jogador quantas tentativas restam para ele
 
             System.out.println("Vamos jogar então!!\n"); // Mostro uma mensagem
+            System.out.println("Insira apenas uma letra por tentativa!!");
             while (tentativas < tentativaMaxima && !palavraAcertada) { // Este é um Loop que continua a execução do jogo emquanto o número de tentavias do jogador é menor que o número máximo e enquanto a palavra não é acertada
                 System.out.println("Palavra oculta: " + jogo.getPalavraOculta()); // Mostro a "Palavra Oculta"(palavra que o jogador tem que acertar) 
                 String jogador = scanner.nextLine(); // Escaneia o que o jogador colocou
@@ -40,12 +42,18 @@ public class Main {
                             jogo.getPalavraOculta().setCharAt(i, letraTentada); // Altero a letra oculta para a letra correta que deve aparecer
                             acertou = true; // Digo que o jogador acertou a letra
                             tentativas--; // Aumento uma tentativa pois caso ele não acerte, o número de tentativas diminui - Assim deixando as tentativas do jogador como já estão
+                            tentativasRestantes++; // Aumento uma tentativa pois caso ele não acerte, o número de tentativas diminui - Assim deixando as tentativas do jogador como já estão
                         }
                     } if(!acertou) { // Se o jogador errou a letra
                         System.out.println("Você errou!"); // Digo que o jogador errou
                     }
                     tentativas++; // Diminuo o número de tentativas restantes
-
+                    tentativasRestantes--; // Diminuo o número de tentativas restantes
+                    if(tentativasRestantes > 1 || tentativasRestantes == 0){ // Se o número de tentativas restantes for maior que "1" ou igual a "0" ->
+                    System.out.println("Você possui " + tentativasRestantes + " tentativas!"); // Mostro mensagem
+                    } else { // Se o número de tentativas restantes for igual a 1 ->
+                        System.out.println("Você possui " + tentativasRestantes + " tentativa!"); // A palavra "tentativas" se torna "tentativa"
+                    }
                     if(tentativas == tentativaMaxima){ // Se o jogador fizer o máximo de tentativas e não ganhar o jogo ->
                         System.out.println("Você perdeu!\nA palavra correta era: " + jogo.getPalavraCorreta()); // Digo que o jogador perdeu e mostro qual era a palavra correta
                     } else if(jogo.getPalavraOculta().toString().equals(jogo.getPalavraCorreta())){ // Se a palavra oculta ser totalmente acertada e for igual a palavra correta ->
@@ -56,6 +64,7 @@ public class Main {
                 } else { // Se o jogador colocar mais de uma letra quando estiver tentando acertar a letra correta ->
                     System.out.println("Insira apenas uma letra!"); // Digo que ele deve inserir apenas uma letra
                     tentativas--; // (Aumento/Deixo igual) o número de tentativas restantes 
+                    controleTentativas++;
                 }
             }
         } else if(perguntaInicial.equals("nao")) { // Se a resposta da pergunta inicial for igual a "nao" ->
