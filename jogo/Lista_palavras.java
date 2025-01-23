@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Lista_palavras<T extends Lista_jogo>{ // Classe responsável por guardas tipos diferentes de Listas
+public class Lista_palavras<T extends Lista_jogo>{ // Classe responsável por guardar tipos diferentes de Listas
     private List<T> listas;
     private int tamanhoLista;
     private Random random = new Random();
